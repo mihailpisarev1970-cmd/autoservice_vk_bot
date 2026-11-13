@@ -13,13 +13,13 @@ date-released: 2025-01-01
 keywords:
   - vk bot
   - vkontakte
+  - vkbottle
   - autoservice
   - car service booking
   - ai car diagnostics
   - llm
   - baserow crm
   - python
-  - vkbottle
   - docker
 repository-code: "https://github.com/mihailpisarev1970-cmd/autoservice_vk_bot"
 url: "https://github.com/mihailpisarev1970-cmd/autoservice_vk_bot"

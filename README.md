@@ -3,7 +3,7 @@
 > **Кратко:** VK-бот для автосервиса на Python — онлайн-запись на ТО через календарь, ИИ-диагностика неисправностей по тексту, фото и голосовому сообщению (LLM + Whisper), статус ремонта и синхронизация заявок с CRM Baserow.
 
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-blue.svg?style=for-the-badge&logo=python)](https://www.python.org/)
-[![vkbottle 3.0](https://img.shields.io/badge/vkbottle-3.0-green.svg?style=for-the-badge)](https://vkbottle.readthedocs.io/)
+[![vkbottle 3.0](https://img.shields.io/badge/vkbottle-3.0-green.svg?style=for-the-badge)](https://github.com/vkbottle/vkbottle)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg?style=for-the-badge&logo=docker)](https://www.docker.com/)
 [![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 [![VK Bot](https://img.shields.io/badge/VK-ВКонтакте-blue.svg?style=for-the-badge&logo=vk)](https://vk.com/)
@@ -44,7 +44,7 @@ autoservice_vk_bot/
 
 - **Python 3.11+** (в Docker используется 3.11, локально проверено на 3.13)
 - или **Docker + Docker Compose** для запуска в контейнере
-- Токен сообщества ВКонтакте
+- Токен сообщества ВКонтакте — [инструкция VK API](https://dev.vk.com/ru/api/access-token/getting-started)
 - API-ключ шлюза Polza.ai (для ИИ-диагностики)
 - Доступ к Baserow (URL + токен + ID таблицы)
 
@@ -54,7 +54,7 @@ autoservice_vk_bot/
 
 1. Откройте управление сообществом → **Работа с API** → вкладка **Ключи доступа**.
 2. Создайте ключ доступа с правами: `messages`, `photos` (права на сообщения достаточны для работы бота).
-3. В настройках сообщества подключите **Работа с API** и разрешите **Получать сообщения** (Long Poll API).
+3. В настройках сообщества подключите **Работа с API** и разрешите **Получать сообщения** (Long Poll API) — [документация VK: Long Poll для ботов](https://dev.vk.com/ru/api/bots/long-poll).
 
 ### 2. API-ключ Polza.ai
 
@@ -159,12 +159,28 @@ docker compose down
 | Компонент        | Технология                          |
 |------------------|-------------------------------------|
 | Язык             | Python 3.11+                        |
-| VK API           | [vkbottle](https://vkbottle.readthedocs.io/) 3.0 |
+| VK API           | [vkbottle](https://github.com/vkbottle/vkbottle) 3.0 (pinned) |
 | Асинхронность    | asyncio, aiohttp                    |
 | ИИ               | Шлюз Polza.ai (OpenAI-совместимый), Whisper для голоса |
 | CRM              | Baserow (REST API)                  |
 | Изображения      | Pillow (сжатие фото перед отправкой в ИИ) |
 | Контейнеризация  | Docker, Docker Compose              |
+
+## 📚 Документация и полезные ссылки
+
+| Что | Ссылка |
+|-----|--------|
+| vkbottle — репозиторий (исходники, примеры) | https://github.com/vkbottle/vkbottle |
+| vkbottle — документация (хаб) | https://vkbottle.readthedocs.io/ru/latest/ |
+| vkbottle — первый бот (туториал) | https://vkbottle.readthedocs.io/ru/latest/tutorial/first-bot/ |
+| vkbottle — клавиатуры | https://vkbottle.readthedocs.io/ru/latest/tools/keyboard/ |
+| vkbottle — FAQ | https://vkbottle.readthedocs.io/ru/latest/tutorial/faq/ |
+| VK API — работа с ботами сообществ | https://dev.vk.com/ru/api/bots/getting-started |
+| VK API — получение ключа доступа | https://dev.vk.com/ru/api/access-token/getting-started |
+| VK API — Long Poll для ботов | https://dev.vk.com/ru/api/bots/long-poll |
+| vkbottle на PyPI | https://pypi.org/project/vkbottle/ |
+
+> ℹ️ Обратите внимание: проект использует **зафиксированную версию `vkbottle==3.0.0`** (см. `requirements.txt`), а публичная документация на Read the Docs описывает актуальную **4.x**. Ссылки ведут только на существующие разделы; часть разделов документации 4.x по API отличается от 3.0 — сверяйтесь с исходниками тега 3.x в репозитории vkbottle.
 
 ## 🔧 Возможные проблемы
 
