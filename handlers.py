@@ -1,5 +1,4 @@
 import io
-import json
 import base64
 import asyncio
 import urllib.request

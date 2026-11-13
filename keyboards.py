@@ -1,4 +1,3 @@
-import calendar
 from datetime import date, timedelta
 from typing import List
 from vkbottle import Keyboard, KeyboardButtonColor, Text, Callback, OpenLink
