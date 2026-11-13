@@ -44,7 +44,7 @@ autoservice_vk_bot/
 
 - **Python 3.11+** (в Docker используется 3.11, локально проверено на 3.13)
 - или **Docker + Docker Compose** для запуска в контейнере
-- Токен сообщества ВКонтакте — [инструкция VK API](https://dev.vk.com/ru/api/access-token/getting-started)
+- Токен сообщества ВКонтакте — [документация VK API](https://dev.vk.com/ru) (раздел «Получение ключа доступа»: [инструкция](https://dev.vk.com/ru/api/access-token/getting-started))
 - API-ключ шлюза Polza.ai (для ИИ-диагностики)
 - Доступ к Baserow (URL + токен + ID таблицы)
 
@@ -52,7 +52,7 @@ autoservice_vk_bot/
 
 ### 1. Токен сообщества ВКонтакте
 
-1. Откройте управление сообществом → **Работа с API** → вкладка **Ключи доступа**.
+1. Откройте управление сообществом → **Работа с API** → вкладка **Ключи доступа** ([документация VK API](https://dev.vk.com/ru)).
 2. Создайте ключ доступа с правами: `messages`, `photos` (права на сообщения достаточны для работы бота).
 3. В настройках сообщества подключите **Работа с API** и разрешите **Получать сообщения** (Long Poll API) — [документация VK: Long Poll для ботов](https://dev.vk.com/ru/api/bots/long-poll).
 
@@ -159,7 +159,7 @@ docker compose down
 | Компонент        | Технология                          |
 |------------------|-------------------------------------|
 | Язык             | Python 3.11+                        |
-| VK API           | [vkbottle](https://github.com/vkbottle/vkbottle) 3.0 (pinned) |
+| VK API           | [vkbottle](https://github.com/vkbottle/vkbottle) 3.0 (pinned), [документация VK API](https://dev.vk.com/ru) |
 | Асинхронность    | asyncio, aiohttp                    |
 | ИИ               | Шлюз Polza.ai (OpenAI-совместимый), Whisper для голоса |
 | CRM              | Baserow (REST API)                  |
@@ -175,6 +175,7 @@ docker compose down
 | vkbottle — первый бот (туториал) | https://vkbottle.readthedocs.io/ru/latest/tutorial/first-bot/ |
 | vkbottle — клавиатуры | https://vkbottle.readthedocs.io/ru/latest/tools/keyboard/ |
 | vkbottle — FAQ | https://vkbottle.readthedocs.io/ru/latest/tutorial/faq/ |
+| VK API — документация (главная) | https://dev.vk.com/ru |
 | VK API — работа с ботами сообществ | https://dev.vk.com/ru/api/bots/getting-started |
 | VK API — получение ключа доступа | https://dev.vk.com/ru/api/access-token/getting-started |
 | VK API — Long Poll для ботов | https://dev.vk.com/ru/api/bots/long-poll |
