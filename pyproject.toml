@@ -1,0 +1,59 @@
+[project]
+name = "autoservice-vk-bot"
+version = "1.0.0"
+description = "VK bot for car service: online service booking, AI car diagnostics (text/photo/voice) and repair status tracking via Baserow CRM."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "autoservice_vk_bot contributors" }]
+keywords = [
+    "vk-bot",
+    "vkontakte",
+    "vk-api",
+    "vkbottle",
+    "autoservice",
+    "car-service",
+    "auto-diagnostics",
+    "ai-diagnostics",
+    "llm",
+    "openai-compatible",
+    "whisper",
+    "speech-to-text",
+    "baserow",
+    "crm",
+    "python",
+    "asyncio",
+    "aiohttp",
+    "chatbot",
+    "docker",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Framework :: AsyncIO",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: Russian",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Communications :: Chat",
+    "Topic :: Office/Business :: Scheduling",
+]
+dependencies = [
+    "vkbottle==3.0.0",
+    "aiohttp>=3.9.0",
+    "python-dotenv>=1.0.0",
+    "Pillow>=10.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/mihailpisarev1970-cmd/autoservice_vk_bot"
+Repository = "https://github.com/mihailpisarev1970-cmd/autoservice_vk_bot"
+Documentation = "https://github.com/mihailpisarev1970-cmd/autoservice_vk_bot#readme"
+Issues = "https://github.com/mihailpisarev1970-cmd/autoservice_vk_bot/issues"
+Changelog = "https://github.com/mihailpisarev1970-cmd/autoservice_vk_bot/blob/main/CHANGELOG.md"
+
+[tool.setuptools]
+py-modules = ["main", "config", "handlers", "keyboards", "states", "baserow_client"]

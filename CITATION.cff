@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "Если вы используете этот проект в своей работе, пожалуйста, ссылайтесь на него так:"
+title: "autoservice_vk_bot — VK-бот автосервиса с ИИ-диагностикой автомобиля"
+abstract: >-
+  Чат-бот для сообщества ВКонтакте, который автоматизирует
+  приём клиентов автосервиса: запись на ТО через интерактивный календарь,
+  ИИ-диагностика неисправностей по тексту, фото и голосовому сообщению,
+  проверка статуса ремонта и синхронизация заявок с CRM Baserow.
+type: software
+license: MIT
+version: 1.0.0
+date-released: 2025-01-01
+keywords:
+  - vk bot
+  - vkontakte
+  - autoservice
+  - car service booking
+  - ai car diagnostics
+  - llm
+  - baserow crm
+  - python
+  - vkbottle
+  - docker
+repository-code: "https://github.com/mihailpisarev1970-cmd/autoservice_vk_bot"
+url: "https://github.com/mihailpisarev1970-cmd/autoservice_vk_bot"

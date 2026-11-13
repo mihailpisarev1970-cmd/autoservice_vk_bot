@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  vk_bot:
+    build: .
+    container_name: autoservice_vk_bot
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./:/app

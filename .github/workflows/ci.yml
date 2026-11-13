@@ -1,0 +1,51 @@
+name: CI (Python lint & import check)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [ "3.11", "3.12" ]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install ruff
+
+      - name: Lint with ruff
+        run: ruff check . --select E9,F --exclude venv
+
+      - name: Byte-compile sources
+        run: python -m compileall -q main.py config.py handlers.py keyboards.py states.py baserow_client.py
+
+      - name: Import smoke test (no tokens required)
+        env:
+          VK_TOKEN: ""
+          POLZA_API_KEY: ""
+          BASEROW_URL: "https://baserow.example.com"
+          BASEROW_TOKEN: ""
+        run: |
+          python -c "import config, states, keyboards, baserow_client; import handlers; print('imports OK')"

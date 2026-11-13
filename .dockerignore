@@ -1,0 +1,18 @@
+.git
+.gitignore
+.env
+.env.example
+venv
+.venv
+env
+__pycache__
+*.pyc
+*.pyo
+.vkbottle
+.idea
+.vscode
+*.log
+Просмотр логов.txt
+README.md
+Dockerfile
+docker-compose.yml

@@ -1,0 +1,27 @@
+# Окружение и зависимости
+.venv
+venv
+env
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Служебные файлы бота и IDE
+.vkbottle/
+.idea/
+.vscode/
+*.log
+Просмотр логов.txt
+
+# --- Секреты и локальное окружение (никогда не коммитить) ---
+.env
+*.env
+!.env.example
+secrets/
+*.key
+*.pem
+.DS_Store
+Thumbs.db
